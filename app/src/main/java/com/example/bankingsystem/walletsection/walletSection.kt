@@ -36,14 +36,11 @@ fun walletSection(){
             Spacer(modifier = Modifier.height(10.dp))
             Text(text = "44,050" , fontSize = 17.sp , color = MaterialTheme.colorScheme.onBackground , fontWeight = FontWeight.Bold)
         }
-        Box(modifier = Modifier.clip(RoundedCornerShape(8.dp)).background(color = MaterialTheme.colorScheme.secondaryContainer).padding(6.dp)){Icon(imageVector = Icons.Rounded.Search, contentDescription = null) }
+        Box(modifier = Modifier.clip(RoundedCornerShape(8.dp)).
+        background(color = MaterialTheme.colorScheme.secondaryContainer).
+        padding(6.dp)){Icon(imageVector = Icons.Rounded.Search, contentDescription = null)
+        }
 
 
     }
-}
-
-@Preview
-@Composable
-fun pev(){
-    walletSection()
 }

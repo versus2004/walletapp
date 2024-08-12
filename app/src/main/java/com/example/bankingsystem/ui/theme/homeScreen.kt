@@ -21,6 +21,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.bankingsystem.BottomBar.bottomBar
 import com.example.bankingsystem.BottomBar.items
 import com.example.bankingsystem.cardsection.cardSection
+import com.example.bankingsystem.financesection.financeSection
 import com.example.bankingsystem.walletsection.walletSection
 
 @Composable
@@ -33,7 +34,7 @@ fun homeScreen(){
         Column(Modifier.padding(padding)) {
             walletSection()
             cardSection()
-
+            financeSection()
         }
 
     }
