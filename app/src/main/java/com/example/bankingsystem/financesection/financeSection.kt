@@ -4,7 +4,11 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -30,9 +34,9 @@ val finance = listOf(financedata("My Bussines" , Icons.AutoMirrored.Rounded.Star
 
 @Composable
 fun financeSection(){
-Column {
+Column(Modifier.padding(8.dp)) {
     Text(text = "Finances" , fontSize = 17.sp  )
-    LazyRow {
+    LazyRow (){
         items(finance){jiofin->
 
             financecard(financedata = jiofin)
@@ -43,24 +47,4 @@ Column {
 }
 }
 
-@Composable
-fun financecard(financedata: financedata)
-{
-    Box(modifier = Modifier
-        .clip(RoundedCornerShape(10.dp))
-        .background(MaterialTheme.colorScheme.onBackground).padding(8.dp))
-    {
-    Card() {
-        Column() {
 
-            Box(
-                Modifier
-                    .clip(RoundedCornerShape(8.dp))
-                    .background(color = Color.Cyan)){ Icon(imageVector = financedata.icon, contentDescription = financedata.name) }
-            Text(text = financedata.name)
-
-        }
-    }
-    }
-
-}
