@@ -39,12 +39,18 @@ Column(Modifier.padding(8.dp)) {
     LazyRow (){
         items(finance){jiofin->
 
-            financecard(financedata = jiofin)
+            financecard(finance=jiofin)
             
         }
     }
 
 }
+}
+
+@Composable
+fun financecard(finance : financedata){
+
+
 }
 
 
