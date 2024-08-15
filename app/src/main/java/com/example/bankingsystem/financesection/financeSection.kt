@@ -14,7 +14,9 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.StarHalf
+import androidx.compose.material.icons.rounded.ShoppingCart
 import androidx.compose.material.icons.rounded.StarHalf
+import androidx.compose.material.icons.rounded.TravelExplore
 import androidx.compose.material.icons.rounded.Wallet
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
@@ -29,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 val finance = listOf(financedata("My Bussines" , Icons.AutoMirrored.Rounded.StarHalf),
-    financedata("My Wallet" , Icons.Rounded.Wallet),financedata("My Wallet" , Icons.Rounded.Wallet),
+    financedata("Shopping" , Icons.Rounded.ShoppingCart),financedata("My Wallet" , Icons.Rounded.Wallet),financedata("Travel Explore" , Icons.Rounded.TravelExplore)
 )
 
 @Composable
@@ -44,12 +46,24 @@ Column(Modifier.padding(8.dp)) {
         }
     }
 
+
 }
 }
 
+@Preview
+@Composable
+fun previews(){
+    financecard(finance = financedata("My Wallet" , Icons.Rounded.Wallet))
+}
 @Composable
 fun financecard(finance : financedata){
-
+    Card (Modifier.padding(8.dp)){
+        Column(Modifier.padding(8.dp)) {
+            Box(modifier = Modifier.clip(RoundedCornerShape(8.dp)).background(color =Color.White)){ Icon(imageVector = finance.icon, contentDescription = finance.name) }
+            Spacer(modifier = Modifier.height(8.dp))
+            Text(text = finance.name)
+        }
+    }
 
 }
 
